@@ -1,0 +1,143 @@
+* {
+  font-family:  Arial, "Helvetica Neue", Helvetica, sans-serif;
+  box-sizing: border-box;
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
+  --border-thin: var(--s-5);
+  margin: 0;
+  padding: 0;
+  line-height: var(--ratio);
+  font-size: calc(.333vw + 1em);
+
+  --navbar-height: var(--s2);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: var(--s4);
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--s3);
+  margin: auto;
+  text-align: center;
+}
+
+h3 {
+  font-size: var(--s2);
+  margin: auto;
+  text-align: center;
+}
+
+h4 {
+  font-size: var(--s1);
+  margin: auto;
+  text-align: center;
+}
+
+.box {
+  /* ↓ Padding set to the first point on the modular scale */
+  padding: var(--s1);
+  /* ↓ Assumes you have a --border-thin var */
+  border: var(--border-thin) solid;
+  /* ↓ Always apply the transparent outline, for high contrast mode */
+  outline: var(--border-thin) transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+  /* ↓ The light and dark color vars */
+  --color-light: #eeecec;
+  --color-dark: #1e1c1c;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.box * {
+  /* ↓ Force colors to inherit from the parent
+  and honor inversion (below) */
+  color: inherit;
+}
+
+.box.invert {
+  /* ↓ The color vars inverted */
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.center {
+  /* ↓ Remove padding from the width calculation */
+  box-sizing: content-box;
+  /* ↓ The maximum width is the maximum measure */
+  max-width: 60ch;
+  /* ↓ Only affect horizontal margins */
+  margin-left: auto;
+  margin-right: auto;
+  /* ↓ Apply the minimum horizontal space */
+  padding-left: var(--s1);
+  padding-right: var(--s1);
+}
+
+#main-content {
+  position: relative;
+  /* Adjust position so that it doesn't make a double-thick border */
+  top: calc(var(--navbar-height) - var(--border-thin));
+}
+
+#navbar {
+  display: flex;
+  height: var(--navbar-height);
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 0 var(--navbar-height);
+  z-index: 2;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+
+
+#welcome-section {
+  height: 100vh;
+  /* margin-top: var(--navbar-height); */
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--s-1);
+  padding: var(--s-1) var(--s-1) 0 var(--s-1);
+}
+
+.project-tile {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+
+}
+
+.project-label {
+  margin: auto;
+}
+
+.project-label * {
+  margin: auto;
+}
