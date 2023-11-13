@@ -1,5 +1,5 @@
 * {
-  font-family:  Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   box-sizing: border-box;
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -18,7 +18,7 @@
   margin: 0;
   padding: 0;
   line-height: var(--ratio);
-  font-size: calc(.333vw + 1em);
+  font-size: calc(0.333vw + 1em);
 
   --navbar-height: var(--s2);
   --color-light: #eeecec;
@@ -121,9 +121,8 @@ h4 {
   align-self: center;
 }
 
-@media {}
-
-
+@media {
+}
 
 #welcome-section {
   height: 100vh;
@@ -145,7 +144,8 @@ h4 {
 }
 
 .project-image {
-
+  height: 250px;
+  object-fit: cover;
 }
 
 .project-label {
